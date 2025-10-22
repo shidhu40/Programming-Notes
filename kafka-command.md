@@ -24,5 +24,6 @@ bin/kafka-console-consumer.sh --topic imageDeleteSync --from-beginning --bootstr
 
 ## Check the status of kafka
 sudo systemctl status zookeeper
+
 sudo systemctl status kafka
 
