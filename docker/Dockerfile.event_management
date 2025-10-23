@@ -1,0 +1,9 @@
+FROM node:16.20.2-alpine3.18
+WORKDIR /app
+COPY ./app/package*.json ./
+copy ./app/event_management/package*.json ./event_management
+RUN npm install
+COPY ./app/config ./config
+WORKDIR /app/event_management
+RUN npm install
+CMD ["node", "start"]

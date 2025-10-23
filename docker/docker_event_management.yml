@@ -1,0 +1,17 @@
+version: '3'
+services:
+  event_manager:
+    image: my_event_manager_image:latest
+    container_name: event_manager
+    ports:
+      - "8080:8080"
+    environment:
+      - EVENT_DB_HOST=db_host
+      - EVENT_DB_PORT=5432
+      - EVENT_DB_USER=user
+      - EVENT_DB_PASSWORD=password
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+      - "/var/lib/docker/containers:/var/lib/docker/containers:rw"
+    restart: always
